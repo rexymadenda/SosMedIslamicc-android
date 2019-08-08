@@ -1,4 +1,4 @@
-package id.bigio.jakarta.ppid.api
+package com.hariobudiharjo.sosmedislamic.network
 
 import io.reactivex.Observable
 import okhttp3.MultipartBody
@@ -9,57 +9,46 @@ import retrofit2.http.*
 
 interface SosmedInterface {
 
-    @POST("/apps/dip/format/json")
+    @POST("api.php?action=login")
     @FormUrlEncoded
     fun login(
-        @Field("kategori") kategori: String,
-        @Field("jangka_waktu") jangka_waktu: String?
+        @Field("email") email: String,
+        @Field("pass") pass: String?
     ): Observable<ResponseBody>
 
 
     @FormUrlEncoded
-    @POST("apps/signup/format/json")
+    @POST("api.php?action=register")
     fun registrasi(
-        @Field("nama_lengkap") nama: String,
-        @Field("nik_no_ktp") nik: String,
-        @Field("kategori_nik") kategori_nik: String
+        @Field("nama") nama: String,
+        @Field("email") email: String,
+        @Field("pass") pass: String
     ): Observable<ResponseBody>
 
-    @FormUrlEncoded
-    @POST("apps/signup/format/json")
+    @GET("api.php?action=chat")
     fun listchat(
-        @Field("nama_lengkap") nama: String,
-        @Field("nik_no_ktp") nik: String,
-        @Field("kategori_nik") kategori_nik: String
+        @Query("id") id: String
     ): Observable<ResponseBody>
 
+    @GET("api.php?action=listgrup")
+    fun listgrup(): Observable<ResponseBody>
 
 
     @FormUrlEncoded
-    @POST("apps/signup/format/json")
-    fun listgrup(
-        @Field("nama_lengkap") nama: String,
-        @Field("nik_no_ktp") nik: String,
-        @Field("kategori_nik") kategori_nik: String
-    ): Observable<ResponseBody>
-
-
-
-    @FormUrlEncoded
-    @POST("apps/signup/format/json")
+    @POST("api.php?action=post")
     fun sendMessage(
-        @Field("nama_lengkap") nama: String,
-        @Field("nik_no_ktp") nik: String,
-        @Field("kategori_nik") kategori_nik: String
+        @Field("message") message: String,
+        @Field("id") id: String,
+        @Field("gid") gid: String
     ): Observable<ResponseBody>
 
 
-
     @FormUrlEncoded
-    @POST("apps/signup/format/json")
+    @POST("api.php?action=postaudio")
     fun sendAudio(
-        @Field("nama_lengkap") nama: String,
-        @Field("nik_no_ktp") nik: String,
-        @Field("kategori_nik") kategori_nik: String
+        @Field("id") id: String,
+        @Field("gid") gid: String,
+//        @Field("audio") audio: String
+        @Part body: MultipartBody.Part
     ): Observable<ResponseBody>
 }
