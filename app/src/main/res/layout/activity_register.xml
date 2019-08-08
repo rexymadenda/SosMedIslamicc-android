@@ -1,10 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activity.RegisterActivity">
-
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"/>
+    <TextView
+            android:text="General Info :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginLeft="14dp"
+            android:textStyle="bold"
+            android:textColor="#282133"/>
+    <TextView
+            android:text="Nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="14dp"
+            android:layout_marginLeft="14dp"
+            android:textStyle="bold"
+            android:textColor="#282133"/>
+    <EditText
+            android:hint="Nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="#B9B7B7"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp" android:id="@+id/edtNama"/>
+    <TextView
+            android:text="Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="14dp"
+            android:layout_marginLeft="14dp"
+            android:textStyle="bold"
+            android:textColor="#282133"/>
+    <EditText
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="#B9B7B7"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp" android:id="@+id/edtEmail"/>
+    <TextView
+            android:text="Password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginLeft="14dp"
+            android:textStyle="bold"
+            android:textColor="#282133"/>
+    <EditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="#B9B7B7"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp" android:id="@+id/edtPassword"/>
+    <TextView
+            android:text="Confirm Password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginLeft="14dp"
+            android:textStyle="bold"
+            android:textColor="#282133"/>
+    <EditText
+            android:id="@+id/edtPassword2"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="#B9B7B7"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"/>
+    <Button
+            android:id="@+id/btn_signup"
+            android:text="Sign Up"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+</LinearLayout>

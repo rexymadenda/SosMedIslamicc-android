@@ -36,7 +36,7 @@ class RetrofitClient {
                 .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://rexymadenda.pe.hu/")
+                .baseUrl("https://rexy.public.api.my.id/")
                 .build()
         }
     }

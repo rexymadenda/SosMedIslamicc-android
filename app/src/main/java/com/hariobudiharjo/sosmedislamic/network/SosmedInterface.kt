@@ -1,5 +1,6 @@
 package com.hariobudiharjo.sosmedislamic.network
 
+import com.hariobudiharjo.sosmedislamic.model.api.*
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -14,7 +15,7 @@ interface SosmedInterface {
     fun login(
         @Field("email") email: String,
         @Field("pass") pass: String?
-    ): Observable<ResponseBody>
+    ): Observable<LoginResponse>
 
 
     @FormUrlEncoded
@@ -23,15 +24,15 @@ interface SosmedInterface {
         @Field("nama") nama: String,
         @Field("email") email: String,
         @Field("pass") pass: String
-    ): Observable<ResponseBody>
+    ): Observable<RegistrasiResponse>
 
     @GET("api.php?action=chat")
     fun listchat(
         @Query("id") id: String
-    ): Observable<ResponseBody>
+    ): Observable<ListChatResponse>
 
     @GET("api.php?action=listgrup")
-    fun listgrup(): Observable<ResponseBody>
+    fun listgrup(): Observable<ListGrupResponse>
 
 
     @FormUrlEncoded
@@ -40,7 +41,7 @@ interface SosmedInterface {
         @Field("message") message: String,
         @Field("id") id: String,
         @Field("gid") gid: String
-    ): Observable<ResponseBody>
+    ): Observable<KirimMessageResponse>
 
 
     @FormUrlEncoded
@@ -50,5 +51,5 @@ interface SosmedInterface {
         @Field("gid") gid: String,
 //        @Field("audio") audio: String
         @Part body: MultipartBody.Part
-    ): Observable<ResponseBody>
+    ): Observable<KirimAudioResponse>
 }
