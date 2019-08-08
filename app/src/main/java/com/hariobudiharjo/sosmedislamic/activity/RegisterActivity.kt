@@ -4,13 +4,11 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
 import com.hariobudiharjo.sosmedislamic.R
 import com.hariobudiharjo.sosmedislamic.network.SosmedInterface
-import id.bigio.jakarta.ppid.api.RetrofitClient
+import com.hariobudiharjo.sosmedislamic.network.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_register.*

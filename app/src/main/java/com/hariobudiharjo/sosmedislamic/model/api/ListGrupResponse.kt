@@ -3,7 +3,7 @@ package com.hariobudiharjo.sosmedislamic.model.api
 data class ListGrupResponse(
     val status: Boolean? = null,
     val message: String? = null,
-    val data: List<Datum>? = null
+    val data: Array<Datum>? = null
 ) {
     data class Datum(
         val id: String? = null,

@@ -8,6 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".activity.GrupActivity">
     <android.support.v7.widget.RecyclerView
+            tools:listitem="@layout/rv_list_grup"
             android:id="@+id/rv_grup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

@@ -10,7 +10,7 @@ import android.util.Log
 import com.hariobudiharjo.sosmedislamic.R
 import com.hariobudiharjo.sosmedislamic.network.SosmedInterface
 import com.hariobudiharjo.sosmedislamic.utils.SPManager
-import id.bigio.jakarta.ppid.api.RetrofitClient
+import com.hariobudiharjo.sosmedislamic.network.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_login.*
@@ -36,13 +36,11 @@ class LoginActivity : AppCompatActivity() {
             } else
                 login(email, pass)
         }
-    }
 
-//    fun login(email: String, password: String) {
-//        val intent = Intent(this, MainActivity::class.java)
-//        startActivity(intent)
-//
-//    }
+        btn_txt_signup.setOnClickListener {
+            goToSignUp()
+        }
+    }
 
     @SuppressLint("CheckResult")
     private fun login(email: String, pass: String) {
@@ -76,8 +74,18 @@ class LoginActivity : AppCompatActivity() {
         dialogBox.setTitle("Nice!")
         dialogBox.setMessage(message)
         dialogBox.setCancelable(false)
-        dialogBox.setPositiveButton("OK") { _, _ -> this.finish() }
+        dialogBox.setPositiveButton("OK") { _, _ -> goToGrup() }
         dialogBox.show()
+    }
+
+    private fun goToGrup() {
+        val intent = Intent(this, GrupActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun goToSignUp() {
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 
 

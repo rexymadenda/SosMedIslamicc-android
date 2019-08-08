@@ -1,4 +1,4 @@
-package id.bigio.jakarta.ppid.api
+package com.hariobudiharjo.sosmedislamic.network
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
