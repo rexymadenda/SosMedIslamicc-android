@@ -59,7 +59,7 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
 
         override fun bind(message: messageModel) {
             messageText.text = message.message
-            timeText.text = DateUtils.fromMillisToTimeString(message.time)
+            timeText.text = DateUtils.fromMillisToTimeString(message.time.toLong())
         }
     }
 
@@ -71,7 +71,7 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
         override fun bind(message: messageModel) {
             messageText.text = message.message
             userText.text = message.user
-            timeText.text = DateUtils.fromMillisToTimeString(message.time)
+            timeText.text = DateUtils.fromMillisToTimeString(message.time.toLong())
         }
     }
 }

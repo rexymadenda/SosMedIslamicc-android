@@ -31,6 +31,12 @@ interface SosmedInterface {
         @Query("id") id: String
     ): Observable<ListChatResponse>
 
+
+    @GET("api.php?action=listmember")
+    fun listmember(
+        @Query("gid") id: String
+    ): Observable<ListMemberResponse>
+
     @GET("api.php?action=listgrup")
     fun listgrup(): Observable<ListGrupResponse>
 
