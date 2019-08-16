@@ -55,6 +55,8 @@ class LoginActivity : AppCompatActivity() {
                         spManager?.saveSPSudahLogin(true)
                         spManager?.saveSPGid(result.gid!!)
                         spManager?.saveSPUid(result.id!!)
+                        spManager?.saveSPNama(result.id!!)
+                        spManager?.saveSPEmail(email)
                         showBoxFinish(result.message!!)
                         Log.d("DEBUG", result.toString())
                     } else {

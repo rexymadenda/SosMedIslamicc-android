@@ -39,6 +39,13 @@ class SPManager(context: Context) {
         saveSPString(SP_GID, value)
     }
 
+    fun saveSPEmail(value: String) {
+        saveSPString("EMAIL", value)
+    }
+    fun saveSPNama(value: String) {
+        saveSPString("NAMA", value)
+    }
+
     fun getSPSudahLogin(): Boolean? {
         return sp.getBoolean(SP_SUDAH_LOGIN, false)
     }
@@ -49,6 +56,12 @@ class SPManager(context: Context) {
 
     fun getSPGid(): String? {
         return sp.getString(SP_GID, null)
+    }
+    fun getSPEmail(): String? {
+        return sp.getString("EMAIL", null)
+    }
+    fun getSPNama(): String? {
+        return sp.getString("NAMA", null)
     }
 
 }

@@ -13,6 +13,7 @@ import com.hariobudiharjo.sosmedislamic.model.memberModel
 import com.hariobudiharjo.sosmedislamic.model.messageModel
 import com.hariobudiharjo.sosmedislamic.network.RetrofitClient
 import com.hariobudiharjo.sosmedislamic.network.SosmedInterface
+import com.hariobudiharjo.sosmedislamic.utils.SPManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_member.*
@@ -28,8 +29,17 @@ class MemberActivity : AppCompatActivity() {
         setContentView(R.layout.activity_member)
         memberList.layoutManager = LinearLayoutManager(this)
         adapter = MemberAdapter(listMember, this)
+        val spManager = SPManager(this)
         memberList.adapter = adapter
-        getMember("2")
+        val data = memberModel(
+            "",
+            spManager.getSPEmail()!!,
+            ""
+        )
+
+        listMember.add(data)
+        adapter.notifyDataSetChanged()
+//        getMember("2")
     }
 
 

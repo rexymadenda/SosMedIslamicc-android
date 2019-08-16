@@ -1,6 +1,7 @@
 package com.hariobudiharjo.sosmedislamic.activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         adapter = MessageAdapter(this)
         messageList.adapter = adapter
 
+        btn_member.setOnClickListener {
+            goToMember("!")
+        }
+
         btnSend.setOnClickListener {
             if (txtMessage.text.isNotEmpty()) {
                 val message = messageModel(
@@ -48,6 +53,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Message should not be empty", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun goToMember(gid: String) {
+        val intent = Intent(this, MemberActivity::class.java)
+        intent.putExtra("gid", gid)
+        startActivity(intent)
     }
 
     @SuppressLint("CheckResult")
