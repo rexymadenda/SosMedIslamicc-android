@@ -25,7 +25,7 @@ class MemberAdapter(val items: ArrayList<memberModel>, val context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = items[position]
 
-        holder.judul?.text = data.nama
+        holder.judul?.text = data.nama + " (you) "
         holder.desc?.text = data.email
     }
 
